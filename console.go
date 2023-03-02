@@ -91,6 +91,15 @@ func (c ConsoleType) DebugSubst(msg String, substs ...Valuer) {
 
 // Dir displays an interactive list of the properties of the specified JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
 // In other words, Dir is the way to see all the properties of a specified JavaScript object in console by which the developer can easily get the properties of the object.
+//
+//	c.Dir(object)
 func (c ConsoleType) Dir(o Object) {
 	_, _ = c.Call("dir", o)
+}
+
+// The console.dirxml() method displays an interactive tree of the descendant elements of the specified XML/HTML element. If it is not possible to display as an element the JavaScript Object view is shown instead. The output is presented as a hierarchical listing of expandable nodes that let you see the contents of child nodes.
+//
+//	c.DirXML(object)
+func (c ConsoleType) DirXML(o Object) {
+	_, _ = c.Call("dirxml", o)
 }
